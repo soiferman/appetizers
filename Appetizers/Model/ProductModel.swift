@@ -18,7 +18,7 @@ struct ProductModel: Decodable {
     let carbs: Int
 }
 
-struct ProductResponse {
+struct ProductResponse: Decodable {
     let request: [ProductModel]
 }
 
