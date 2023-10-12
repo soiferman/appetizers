@@ -9,34 +9,36 @@ import SwiftUI
 
 struct OrderView: View {
     
-    @State private var orderItems = MockData.orderItems
+    @EnvironmentObject var order: Order
     
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
                     List {
-                        ForEach(orderItems, id: \.id) { product in
+                        ForEach(order.items, id: \.id) { product in
                             ProductListCell(product: product)
                         }
                         .onDelete(perform: { indexSet in
-                            deleteItems(at: indexSet)
+                            order.deleteItems(at: indexSet)
                         })
                     }
                     .listStyle(PlainListStyle())
                     
-                    if !orderItems.isEmpty {
+                    if !order.items.isEmpty {
                         Button {
                             print("placed")
                         } label: {
-                            ProductButton(title: "$99.99 - Place Order")
+                            //ProductButton(title: "$\(order.totalPrice, specifier: "%.2f") - Place Order")
+                            Text("$\(order.totalPrice, specifier: "%.2f") - Place Order")
                         }
+                        .modifier(StandartButtonStyle())
                         .padding(.bottom, 25)
                         .transition(AnyTransition.opacity.animation(.linear(duration: 0.2)))
                     }
                 }
                 
-                if orderItems.isEmpty {
+                if order.items.isEmpty {
                     ContentUnavailableView("You have no items at your order",
                                            systemImage: "list.bullet.rectangle",
                                            description: Text("Please add appertizer"))
@@ -47,9 +49,6 @@ struct OrderView: View {
         }
     }
     
-    func deleteItems(at offsets: IndexSet) {
-        orderItems.remove(atOffsets: offsets)
-    }
 }
 
 #Preview {

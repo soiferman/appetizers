@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductButton: View {
     
-    let title: String
+    let title: LocalizedStringKey
     
     var body: some View {
         Text(title)
@@ -19,6 +19,7 @@ struct ProductButton: View {
             .foregroundColor(.white)
             .background(Color.primary)
             .cornerRadius(10)
+            
     }
 }
 
