@@ -16,6 +16,11 @@ struct ProductModel: Decodable {
     let calories: Int
     let protein: Int
     let carbs: Int
+    
+    var formattedPrice: String {
+        "$" + String(format: "%.2f", price)
+        
+    }
 }
 
 struct ProductResponse: Decodable {
@@ -26,7 +31,7 @@ struct MockData {
     
     static let sampleProduct = ProductModel(id: 001,
                                             name: "Test Appetizer",
-                                            description: "Appetizer description",
+                                            description: "Appetizer description a lot of text for testing",
                                             price: 9.99,
                                             imageURL: "",
                                             calories: 300,
