@@ -28,9 +28,9 @@ struct AppetizerListView: View {
                 viewModel.getProducts()
             }
             .blur(radius: viewModel.isShowingDetail ? 20 : 0)
-            .onTapGesture {
-                viewModel.isShowingDetail = false
-            }
+//            .onTapGesture {
+//                viewModel.isShowingDetail = false
+//            }
             
             if viewModel.isShowingDetail {
                 AppetizerDetailView(product: viewModel.selectedProduct!,

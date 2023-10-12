@@ -23,11 +23,6 @@ struct AccountView: View {
                         .disableAutocorrection(true)
                     DatePicker("Birthday", selection: $viewModel.user.birthdate,
                                displayedComponents: .date)
-                    Button {
-                        viewModel.saveChanges()
-                    } label: {
-                        Text("Save Changes")
-                    }
                 }
                 
                 Section(header: Text("Requests")) {
@@ -36,6 +31,11 @@ struct AccountView: View {
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .brandPrimary))
                 
+                Button {
+                    viewModel.saveChanges()
+                } label: {
+                    Text("Save Changes")
+                }
             }
             .navigationTitle("🔧 Account")
         }
