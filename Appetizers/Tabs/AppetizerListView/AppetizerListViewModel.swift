@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class AppetizerListViewModel: ObservableObject {
+@MainActor final class AppetizerListViewModel: ObservableObject {
     
     @Published var products: [ProductModel] = []
     @Published var alertItem: AlertItem?
@@ -42,6 +42,37 @@ final class AppetizerListViewModel: ObservableObject {
             }
             
         }
+    }
+    
+    func getProductsAsync() {
+        
+        isLoading = true
+        
+        Task {
+            do {
+                products = try await NetworkManager.shared.getProductsAsync()
+                isLoading = false
+            } catch {
+                if let apiError = error as? APIError {
+                    switch apiError {
+                    case .invalidURL:
+                        alertItem = AlertContext.invalidURL
+                    case .invalidResponse:
+                        alertItem = AlertContext.invalidResponse
+                    case .invalidData:
+                        alertItem = AlertContext.invalidData
+                    case .unableToComplete:
+                        alertItem = AlertContext.unableToComplete
+                    }
+                } else {
+                    alertItem = AlertContext.generalError
+                }
+                
+                isLoading = false
+                
+            }
+        }
+        
     }
     
 }

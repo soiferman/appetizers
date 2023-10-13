@@ -30,7 +30,7 @@
 		1DE9F5502AC26653001D2367 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9F54F2AC26653001D2367 /* ProductModel.swift */; };
 		1DE9F5532AC26E07001D2367 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9F5522AC26E07001D2367 /* ProductListCell.swift */; };
 		1DE9F5562AC32CFC001D2367 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9F5552AC32CFC001D2367 /* NetworkManager.swift */; };
-		1DE9F5582AC33118001D2367 /* ProductError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9F5572AC33118001D2367 /* ProductError.swift */; };
+		1DE9F5582AC33118001D2367 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9F5572AC33118001D2367 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +58,7 @@
 		1DE9F54F2AC26653001D2367 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		1DE9F5522AC26E07001D2367 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		1DE9F5552AC32CFC001D2367 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		1DE9F5572AC33118001D2367 /* ProductError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductError.swift; sourceTree = "<group>"; };
+		1DE9F5572AC33118001D2367 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 		1DB47E2B2AD46E6300232FF8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1DE9F5572AC33118001D2367 /* ProductError.swift */,
+				1DE9F5572AC33118001D2367 /* APIError.swift */,
 				1DB47E2C2AD46E7400232FF8 /* Alert.swift */,
 			);
 			path = Utilities;
@@ -316,7 +316,7 @@
 				1DA937FA2AD4B53600B04A92 /* AppetizerDetailView.swift in Sources */,
 				1DA938012AD6300000B04A92 /* ProductButton.swift in Sources */,
 				1D2BBF2D2AD75F5A00F89389 /* String+Ext.swift in Sources */,
-				1DE9F5582AC33118001D2367 /* ProductError.swift in Sources */,
+				1DE9F5582AC33118001D2367 /* APIError.swift in Sources */,
 				1DB47E2D2AD46E7400232FF8 /* Alert.swift in Sources */,
 				1DA938032AD6324F00B04A92 /* DismissXButton.swift in Sources */,
 				1DE9F54D2AC26071001D2367 /* OrderView.swift in Sources */,
