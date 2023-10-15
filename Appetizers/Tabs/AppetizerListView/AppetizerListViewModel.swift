@@ -54,25 +54,27 @@ import SwiftUI
                 isLoading = false
             } catch {
                 if let apiError = error as? APIError {
-                    switch apiError {
-                    case .invalidURL:
-                        alertItem = AlertContext.invalidURL
-                    case .invalidResponse:
-                        alertItem = AlertContext.invalidResponse
-                    case .invalidData:
-                        alertItem = AlertContext.invalidData
-                    case .unableToComplete:
-                        alertItem = AlertContext.unableToComplete
-                    }
+                    handleError(apiError)
+                    isLoading = false
                 } else {
                     alertItem = AlertContext.generalError
                 }
-                
-                isLoading = false
-                
             }
         }
         
+    }
+    
+    func handleError(_ apiError: APIError) {
+        switch apiError {
+        case .invalidURL:
+            alertItem = AlertContext.invalidURL
+        case .invalidResponse:
+            alertItem = AlertContext.invalidResponse
+        case .invalidData:
+            alertItem = AlertContext.invalidData
+        case .unableToComplete:
+            alertItem = AlertContext.unableToComplete
+        }
     }
     
 }

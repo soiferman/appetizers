@@ -13,7 +13,7 @@ final class ImageLoader: ObservableObject {
     
     func loadFromURLString(url: String) {
         NetworkManager.shared.downloadImage(url: url) { uiImage in
-            guard let uiImage = uiImage else { return }
+            guard let uiImage else { return }
             DispatchQueue.main.async {
                 self.image = Image(uiImage: uiImage)
             }

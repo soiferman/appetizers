@@ -15,7 +15,7 @@ final class NetworkManager {
     static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
     private let appetizerURL = baseURL + "appetizers"
     
-
+    
     /*
      "https://firebasestorage.googleapis.com/v0/b/appetizer-183ce.appspot.com/o/response.json?alt=media&token=20e17591-62a0-4765-83fb-59a9a5705081&_gl=1*4mb4fi*_ga*OTk5ODU0MjIuMTY5NjkwNDE5NQ..*_ga_CW55HF8NVT*MTY5NjkwNDE5NS4xLjEuMTY5NjkwNjkyOS42MC4wLjA."
      */
@@ -27,14 +27,14 @@ final class NetworkManager {
             throw APIError.invalidURL
         }
         
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
+        let (data, _) = try await URLSession.shared.data(from: url)
+
         do {
             let decoder = JSONDecoder()
             return try decoder.decode(ProductResponse.self, from: data).request
-        } 
-        
-        
+        } catch {
+            throw APIError.invalidURL
+        }
     }
     
     func getProducts(completed: @escaping (Result<[ProductModel], APIError>) -> Void) {
@@ -54,7 +54,7 @@ final class NetworkManager {
                 return
             }
             
-            guard let data = data else {
+            guard let data else {
                 completed(.failure(.invalidData))
                 return
             }
@@ -86,7 +86,7 @@ final class NetworkManager {
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
             
-            guard let data = data, let image = UIImage(data: data) else {
+            guard let data, let image = UIImage(data: data) else {
                 completed(nil)
                 return
             }
