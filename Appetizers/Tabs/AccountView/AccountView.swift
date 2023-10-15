@@ -37,14 +37,16 @@ struct AccountView: View {
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
-                    
+                                        
                     DatePicker("Birthday", selection: $viewModel.user.birthdate,
-                               displayedComponents: .date)
+                                                  in: Date().oneHundredTwentyYearsAgo...Date().eighteenYearsAgo,
+                                 displayedComponents: .date)
+   
                 }
                 
                 Section(header: Text("Requests")) {
                     Toggle("Extra napkins", isOn: $viewModel.user.extraNapkins)
-                    Toggle("Frequent Reffils", isOn: $viewModel.user.frequentRefill)
+                    Toggle("Frequent Refills", isOn: $viewModel.user.frequentRefill)
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .brandPrimary))
                 

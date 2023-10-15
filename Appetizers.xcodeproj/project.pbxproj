@@ -13,6 +13,7 @@
 		1D32EAFE2AD89E3E0091E57F /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D32EAFD2AD89E3E0091E57F /* OrderModel.swift */; };
 		1D32EB002AD8AC290091E57F /* ButtonModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D32EAFF2AD8AC290091E57F /* ButtonModifiers.swift */; };
 		1D710F682ADB690B00834635 /* ImageModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D710F672ADB690B00834635 /* ImageModifiers.swift */; };
+		1D710F6A2ADB848900834635 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D710F692ADB848900834635 /* Date+Ext.swift */; };
 		1DA937FA2AD4B53600B04A92 /* AppetizerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA937F92AD4B53600B04A92 /* AppetizerDetailView.swift */; };
 		1DA938012AD6300000B04A92 /* ProductButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA938002AD6300000B04A92 /* ProductButton.swift */; };
 		1DA938032AD6324F00B04A92 /* DismissXButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA938022AD6324F00B04A92 /* DismissXButton.swift */; };
@@ -41,6 +42,7 @@
 		1D32EAFD2AD89E3E0091E57F /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		1D32EAFF2AD8AC290091E57F /* ButtonModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifiers.swift; sourceTree = "<group>"; };
 		1D710F672ADB690B00834635 /* ImageModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModifiers.swift; sourceTree = "<group>"; };
+		1D710F692ADB848900834635 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		1DA937F92AD4B53600B04A92 /* AppetizerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailView.swift; sourceTree = "<group>"; };
 		1DA938002AD6300000B04A92 /* ProductButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductButton.swift; sourceTree = "<group>"; };
 		1DA938022AD6324F00B04A92 /* DismissXButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissXButton.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				1DB47E312AD47B5200232FF8 /* Color+Ext.swift */,
 				1D2BBF2C2AD75F5A00F89389 /* String+Ext.swift */,
+				1D710F692ADB848900834635 /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				1DE9F54B2AC2606B001D2367 /* AccountView.swift in Sources */,
 				1D710F682ADB690B00834635 /* ImageModifiers.swift in Sources */,
 				1DE9F5502AC26653001D2367 /* ProductModel.swift in Sources */,
+				1D710F6A2ADB848900834635 /* Date+Ext.swift in Sources */,
 				1DE9F5532AC26E07001D2367 /* ProductListCell.swift in Sources */,
 				1DE9F53D2AC25EF2001D2367 /* AppetizerTabView.swift in Sources */,
 				1D2BBF2B2AD75E0500F89389 /* AccountViewModel.swift in Sources */,

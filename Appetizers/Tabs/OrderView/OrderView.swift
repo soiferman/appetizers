@@ -16,7 +16,7 @@ struct OrderView: View {
             ZStack {
                 VStack {
                     List {
-                        ForEach(order.items, id: \.id) { product in
+                        ForEach(order.items) { product in
                             ProductListCell(product: product)
                         }
                         .onDelete(perform: { indexSet in
@@ -27,14 +27,13 @@ struct OrderView: View {
                     
                     if !order.items.isEmpty {
                         Button {
-                            print("placed")
+                            print("order placed")
                         } label: {
-                            //ProductButton(title: "$\(order.totalPrice, specifier: "%.2f") - Place Order")
+                            //                        APButton(title: "$\(order.totalPrice, specifier: "%.2f") - Place Order")
                             Text("$\(order.totalPrice, specifier: "%.2f") - Place Order")
                         }
                         .modifier(StandartButtonStyle())
                         .padding(.bottom, 25)
-                        .transition(AnyTransition.opacity.animation(.linear(duration: 0.2)))
                     }
                 }
                 
@@ -45,12 +44,13 @@ struct OrderView: View {
                     .padding(.bottom, 60)
                 }
             }
-            .navigationTitle("🛍️ Order")
+            .navigationTitle("🧾 Orders")
         }
     }
-    
 }
 
-#Preview {
-    OrderView()
+struct OrderView_Previews: PreviewProvider {
+    static var previews: some View {
+        OrderView()
+    }
 }
